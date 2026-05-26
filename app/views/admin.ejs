@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Admin</title>
+
+  <link rel="stylesheet" href="/style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+</head>
+
+<body>
+
+<button
+  class="theme-btn"
+  id="themeButton"
+  onclick="toggleTheme()"
+>
+</button>
+
+<div class="container">
+
+  <div class="logo">
+    <i class="fa-solid fa-user-shield"></i>
+  </div>
+
+  <h1 class="title">
+    Painel Admin
+  </h1>
+
+  <% usuarios.forEach(user => { %>
+
+    <div
+      style="
+      background: var(--input);
+      padding:15px;
+      border-radius:12px;
+      margin-bottom:15px;
+      "
+    >
+
+      <h3><%= user.usuario %></h3>
+
+      <p><%= user.email %></p>
+
+      <br>
+
+      <a
+        href="/edit/<%= user._id %>"
+        style="
+        color:#4ade80;
+        margin-right:15px;
+        text-decoration:none;
+        "
+      >
+        Editar
+      </a>
+
+      <a
+        href="/delete/<%= user._id %>"
+        style="
+        color:#f87171;
+        text-decoration:none;
+        "
+      >
+        Excluir
+      </a>
+
+    </div>
+
+  <% }) %>
+
+  <button
+    onclick="window.location.href='/login'"
+  >
+    Voltar Login
+  </button>
+
+</div>
+
+<script src="/theme.js"></script>
+
+</body>
+</html>

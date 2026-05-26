@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Editar</title>
+
+  <link rel="stylesheet" href="/style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+</head>
+
+<body>
+
+<button
+  class="theme-btn"
+  id="themeButton"
+  onclick="toggleTheme()"
+>
+</button>
+
+<div class="container">
+
+  <div class="logo">
+    <i class="fa-solid fa-pen"></i>
+  </div>
+
+  <h1 class="title">
+    Editar Conta
+  </h1>
+
+  <form
+    action="/edit/<%= usuario._id %>"
+    method="POST"
+  >
+
+    <div class="input-group">
+
+      <input
+        type="text"
+        name="usuario"
+        value="<%= usuario.usuario %>"
+        required
+      >
+
+    </div>
+
+    <div class="input-group">
+
+      <input
+        type="email"
+        name="email"
+        value="<%= usuario.email %>"
+        required
+      >
+
+    </div>
+
+    <button type="submit">
+      Salvar
+    </button>
+
+  </form>
+
+  <div class="link">
+
+    <a href="/admin">
+      Voltar
+    </a>
+
+  </div>
+
+</div>
+
+<script src="/theme.js"></script>
+
+</body>
+</html>
